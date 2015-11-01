@@ -51,7 +51,7 @@ app.use(bodyParser.json());
 var port = 3000;
 
 var router = express.Router();
-router.post('/api/photo', function(req, res) {
+router.post('/photo', function(req, res) {
     upload(req, res, function(err) {
         if (err) {
             return res.end("Error uploading file.");
@@ -90,8 +90,11 @@ router.post('/login', function(req, res) {
         }
     }
     res.json(result);
-})
-
+});
+router.get('/users',function(req, res){
+    res.json(localDB.users);
+    
+});
 app.use('/api', router);
 
 app.listen(port, function() {

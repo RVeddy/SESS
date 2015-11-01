@@ -12,6 +12,10 @@ angular.module('sessApp', ['ngResource', 'ngRoute'])
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl'
             })
+            .when('/users', {
+                templateUrl:'views/users.html',
+                controller: 'UserCtrl'
+            })
             // Error page
             .otherwise({
                 redirectTo: '/error'
@@ -25,7 +29,8 @@ angular.module('sessApp', ['ngResource', 'ngRoute'])
     $http.get('views/login.html', {
         cache: $templateCache
     });
-    $http.get('views/test.html', {
+    $http.get('views/users.html', {
         cache: $templateCache
     });
+
 });
