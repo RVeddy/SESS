@@ -2,8 +2,7 @@
 
 angular.module('sessApp')
     .controller('LoginCtrl', function($scope, $http) {
-        $scope.signIn = function() {
-        	debugger;
+        $scope.signIn = function() {        	
             var data = {
             	username: $scope.username,
             	password: $scope.password
